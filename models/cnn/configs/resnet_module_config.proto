@@ -1,0 +1,53 @@
+//
+// Uber, Inc. (c) 2017
+//
+// Configuration object for ResnetModule.
+//
+syntax = "proto2";
+
+package models.cnn;
+
+message ResnetModuleConfig {
+
+    // Input image number of channels.
+    optional int32 num_channels = 1 [default = 3];
+
+    // Output prediction number of classes.
+    optional int32 num_classes = 2;
+
+    // Number of residual units for each resolution stage.
+    repeated int32 num_residual_units = 3;
+
+    // Number of filters for each resolution stage.
+    repeated int32 num_filters = 4;
+
+    // Stride for the initial convolution of each resolution stage.
+    repeated int32 strides = 5;
+
+    // Dilation rate for each resolution stage.
+    repeated int32 dilations = 6;
+
+    // Stride for the convolution layer in the very beginning.
+    optional int32 init_stride = 7;
+
+    // Max pooling ratio for the very beginning.
+    optional bool init_max_pool = 8;
+
+    // Initial size of a filter. (All filters afterwards are 3x3).
+    optional int32 init_filter_size = 9;
+
+    // Whether to use bottleneck layer.
+    optional bool use_bottleneck = 10;
+
+    // Whether to build the final classification layer.
+    optional bool build_classifier = 11 [default = true];
+
+    // Weight decay.
+    optional float weight_decay = 12;
+
+    // "NCHW" or "NHWC"
+    optional string data_format = 13 [default = "NHWC"];
+
+    // Dropout for wide residual networks.
+    optional float dropout = 14 [default=  0.0];
+}

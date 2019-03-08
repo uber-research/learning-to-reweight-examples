@@ -1,0 +1,42 @@
+// Copyright (c) 2017 - 2019 Uber Technologies, Inc.
+//
+// Licensed under the Uber Non-Commercial License (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at the root directory of this project.
+//
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+//
+//
+// Configuration object for MomentumOptimizer.
+//
+syntax = "proto2";
+
+package models.optim;
+
+message OptimizerConfig {
+    // Optimizer type. Currently allowed values: "sgd", "momentum".
+    optional string type = 1 [default = "momentum"];
+
+    // Learning rate.
+    optional float learn_rate = 2;
+
+    // Momentum.
+    optional float momentum = 3 [default = 0.9];
+    
+    // Batch size for training.
+    optional int32 batch_size = 4;
+
+    // Max number of training iterations.
+    optional int32 max_train_iter = 5;
+
+    // Name of the learning rate scheduler. Currently allowed values: "fixed".
+    optional string learn_rate_scheduler_type = 6 [default = "fixed"];
+
+    // A list of training steps where learning rate decay happens.
+    repeated int32 learn_rate_decay_steps = 7;
+
+    // A list of learning rate values used by the fixed learning rate scheduler.
+    repeated float learn_rate_list = 8;
+}

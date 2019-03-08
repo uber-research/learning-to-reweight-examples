@@ -1,0 +1,31 @@
+//
+// Uber, Inc. (c) 2017
+//
+// Configuration object for ResnetModel.
+//
+syntax = "proto2";
+
+package models.cnn;
+
+import "models/cnn/configs/resnet_module_config.proto";
+import "models/optim/optimizer_config.proto";
+
+message ResnetModelConfig {
+    // Input image height.
+    optional int32 input_height = 1;
+
+    // Input image width.
+    optional int32 input_width = 2;
+
+    // Input image number of channels.
+    optional int32 num_channels = 3 [default = 3];
+
+    // Configuration object for the core resnet module.
+    optional ResnetModuleConfig resnet_module_config = 1000;
+
+    // Configuration object for training optimization.
+    optional models.optim.OptimizerConfig optimizer_config = 2000;
+
+    // Seed for initialization.
+    optional int32 seed = 3000;
+}
