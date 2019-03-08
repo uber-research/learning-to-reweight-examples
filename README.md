@@ -27,7 +27,7 @@ Please see `mnist/mnist_train.py` for more options.
 
 ## CIFAR noisy label experiments
 
-### Download CIFAR dataset:
+### Download CIFAR dataset
 ```
 bash cifar/download_cifar.sh ./data
 ```
