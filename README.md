@@ -54,7 +54,7 @@ Urtasun. Learning to Reweight Examples for Robust Deep Learning. ICML 2018.
 ```
 @inproceedings{ren18l2rw,
   author    = {Mengye Ren and Wenyuan Zeng and Bin Yang and Raquel Urtasun},
-  title     = {Learning to Reweight Examples for Robust Deep Learning}
+  title     = {Learning to Reweight Examples for Robust Deep Learning},
   booktitle = {ICML},
   year      = {2018},
 }
